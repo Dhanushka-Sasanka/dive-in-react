@@ -1,23 +1,23 @@
 
 
-// const password = prompt("Please Enter Your Password.");
+const password = prompt("Please Enter Your Password.");
 
-// if (password === "Hello") {
-//     console.log("Hello Works..!")
-// } else if (password === "hello") {
-//     console.log("hello works");
-// } else {
-//     console.log("Access not granted.!")
-// }
+if (password === "Hello") {
+    console.log("Hello Works..!")
+} else if (password === "hello") {
+    console.log("hello works");
+} else {
+    console.log("Access not granted.!")
+}
 
-// const hobbies2 = ["Sports", "Cooking", "Reading"];
+const hobbies2 = ["Sports", "Cooking", "Reading"];
 
-// let i = 1;
+let i = 1;
 
-// for (const hobby of hobbies2) {
-//     console.log("Hobby " + i + ": " + hobby);
-//     i++;
-// }
+for (const hobby of hobbies2) {
+    console.log("Hobby " + i + ": " + hobby);
+    i++;
+}
 
 // for each
 // while
