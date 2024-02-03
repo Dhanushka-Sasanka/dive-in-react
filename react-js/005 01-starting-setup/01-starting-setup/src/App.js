@@ -1,4 +1,5 @@
 import ExpenseItem from "./components/ExpenseItem";
+import { Expense } from "./components/Expense";
 
 function App() {
 
@@ -13,14 +14,14 @@ function App() {
 
   return (
     <div>
-      <h2>Buget Calculator</h2>
+      <h2 className="main_titel_app">Buget Calculator</h2>
       {/* can also pass complete object */}
       {/* <ExpenseItem
         expense={expensesList[0]}
       /> */}
 
       
-      <ExpenseItem
+      {/* <ExpenseItem
         expenseDate={expensesList[0].expenceDate}
         expenseTitel={expensesList[0].expenseTitel}
         expenseAmount={expensesList[0].expenseAmount}
@@ -48,7 +49,12 @@ function App() {
         expenseDate={expensesList[4].expenceDate}
         expenseTitel={expensesList[4].expenseTitel}
         expenseAmount={expensesList[4].expenseAmount}
-      />
+      /> */}.
+
+
+      <Expense expensesList={expensesList}/>
+
+
     </div>
   );
 }
