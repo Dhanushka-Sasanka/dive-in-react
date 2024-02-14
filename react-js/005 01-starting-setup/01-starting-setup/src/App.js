@@ -1,10 +1,11 @@
 import ExpenseItem from "./components/ExpenseItem";
 import { Expense } from "./components/Expense";
+import NewExpense from "./components/NewExpences/NewExpence";
 
 function App() {
 
   const expensesList = [
-    { expenceDate: new Date(2024, 2, 1), expenseTitel: "Food Expense", expenseAmount: 250021.21 },
+    { expenceDate: new Date(2024, 2, 1), expenseTitel: "Food Expense", expenseAmount: 25021.21 },
     { expenceDate: new Date(2024, 2, 2), expenseTitel: "Car Expense", expenseAmount: 32000.23 },
     { expenceDate: new Date(2024, 2, 3), expenseTitel: "Travel Expense", expenseAmount: 12001.25 },
     { expenceDate: new Date(2024, 2, 4), expenseTitel: "Medicine Expense", expenseAmount: 54210.52 },
@@ -20,7 +21,7 @@ function App() {
         expense={expensesList[0]}
       /> */}
 
-      
+
       {/* <ExpenseItem
         expenseDate={expensesList[0].expenceDate}
         expenseTitel={expensesList[0].expenseTitel}
@@ -51,8 +52,9 @@ function App() {
         expenseAmount={expensesList[4].expenseAmount}
       /> */}.
 
+      <NewExpense />
 
-      <Expense expensesList={expensesList}/>
+      <Expense expensesList={expensesList} />
 
 
     </div>

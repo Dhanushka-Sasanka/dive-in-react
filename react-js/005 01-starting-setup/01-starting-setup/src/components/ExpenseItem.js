@@ -1,4 +1,4 @@
-
+import {useState } from 'react'
 import Card from "./Card";
 import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css"
@@ -12,18 +12,32 @@ function ExpenseItem(props) {
     // const expenseTitel = "Car Insurance";
     // const expenseAmount = 4522.56
 
-    
+    // function onClickFunction(){
+    //     console.log("Clicked..!")
+    // }
+
+    const [titel, setTitel ] = useState(props.expenseTitel);
+
+    // let titel = props.titel;
+
+    const onClickFunction = () => {
+        // titel = "Updated..!";
+        setTitel("UPDATED Value");
+        // console.log("Clicked..!" , titel)
+    }
 
     return (
         <Card className="expense-item">
-             
-            <ExpenseDate expenseDate={props.expenseDate}/>
+
+            <ExpenseDate expenseDate={props.expenseDate} />
 
             {/* <div>{props.expenseDate.toISOString()}</div> */}
             <div className="expense-item__description">
-                <h2>{props.expenseTitel}</h2>
+                <h2>{titel}</h2>
                 <div className="expense-item__price">RS. {props.expenseAmount}</div>
             </div>
+
+            <button className="button-success" onClick={onClickFunction} >Click</button>
         </Card>
     );
 }

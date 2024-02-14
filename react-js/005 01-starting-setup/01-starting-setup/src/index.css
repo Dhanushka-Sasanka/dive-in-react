@@ -17,3 +17,27 @@ body {
   text-align: center;
   text-transform: uppercase;
 }
+
+.button-success {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button-primary {
+  background-color: #008CBA; /* Blue */
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
