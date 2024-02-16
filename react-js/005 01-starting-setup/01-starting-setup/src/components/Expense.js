@@ -12,14 +12,21 @@ export function Expense(props) {
         setFilteredYear(selectedYear);
     };
 
+    const filteredExpenses = props.expensesList.filter(expense => {
+
+        return expense.expenseDate.getFullYear().toString() === filteredYear;
+
+    });
+
     return (
         <Card className="expenses">
 
             <ExpenceFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
 
             {
-                props.expensesList.map((expense) => (
+                filteredExpenses.map((expense) => (
                     <ExpenseItem
+                        key={expense.id}  //this is more advantage for performance , 06 folder = 004 understaning keys
                         expenseTitel={expense.expenseTitel}
                         expenseAmount={expense.expenseAmount}
                         expenseDate={expense.expenseDate}
@@ -29,7 +36,7 @@ export function Expense(props) {
 
         </Card>
     );
-    
+
     {/* <ExpenseItem
                 expenseDate={props.expensesList[1].expenceDate}
                 expenseTitel={props.expensesList[1].expenseTitel}
