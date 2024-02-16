@@ -1,17 +1,29 @@
-import ExpenseItem from "./components/ExpenseItem";
+
 import { Expense } from "./components/Expense";
-import NewExpense from "./components/NewExpences/NewExpence";
+import NewExpense from "./components/NewExpences/NewExpense";
+import { useState } from "react";
+
+const DUMMY_EXPENCES = [
+  { id: 1 , expenseDate: new Date(2024, 2, 1), expenseTitel: "Food Expense", expenseAmount: 25021.21 },
+  { id: 2 ,expenseDate: new Date(2024, 2, 2), expenseTitel: "Car Expense", expenseAmount: 32000.23 },
+  { id: 3 ,expenseDate: new Date(2024, 2, 3), expenseTitel: "Travel Expense", expenseAmount: 12001.25 },
+  { id: 4 ,expenseDate: new Date(2024, 2, 4), expenseTitel: "Medicine Expense", expenseAmount: 54210.52 },
+  { id: 5 ,expenseDate: new Date(2024, 2, 5), expenseTitel: "Clothes Expense", expenseAmount: 45000.26 },
+];
 
 function App() {
 
-  const expensesList = [
-    { expenceDate: new Date(2024, 2, 1), expenseTitel: "Food Expense", expenseAmount: 25021.21 },
-    { expenceDate: new Date(2024, 2, 2), expenseTitel: "Car Expense", expenseAmount: 32000.23 },
-    { expenceDate: new Date(2024, 2, 3), expenseTitel: "Travel Expense", expenseAmount: 12001.25 },
-    { expenceDate: new Date(2024, 2, 4), expenseTitel: "Medicine Expense", expenseAmount: 54210.52 },
-    { expenceDate: new Date(2024, 2, 5), expenseTitel: "Clothes Expense", expenseAmount: 45000.26 },
-  ];
+  const [expenses , setExpenses] = useState(DUMMY_EXPENCES);
 
+
+  const addExpenseHandler = expense => {
+    console.log('In App.js');
+    console.log(expense);
+
+    setExpenses(previousExpences => {
+       return [expense , ...previousExpences ];
+    });
+  };
 
   return (
     <div>
@@ -52,9 +64,9 @@ function App() {
         expenseAmount={expensesList[4].expenseAmount}
       /> */}.
 
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
 
-      <Expense expensesList={expensesList} />
+      <Expense expensesList={expenses} />
 
 
     </div>

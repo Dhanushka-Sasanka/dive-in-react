@@ -16,24 +16,25 @@ function ExpenseItem(props) {
     //     console.log("Clicked..!")
     // }
 
-    const [titel, setTitel ] = useState(props.expenseTitel);
+    // const [expenceTitel, setExpenceTitel ] = useState(props.expenseTitel);
 
-    // let titel = props.titel;
+    // // let titel = props.titel;
 
     const onClickFunction = () => {
         // titel = "Updated..!";
-        setTitel("UPDATED Value");
+        // setExpenceTitel("UPDATED Value");
         // console.log("Clicked..!" , titel)
     }
 
     return (
         <Card className="expense-item">
 
+{/* {console.log(props)} */}
             <ExpenseDate expenseDate={props.expenseDate} />
 
             {/* <div>{props.expenseDate.toISOString()}</div> */}
             <div className="expense-item__description">
-                <h2>{titel}</h2>
+                <h2>{props.expenseTitel}</h2>
                 <div className="expense-item__price">RS. {props.expenseAmount}</div>
             </div>
 
