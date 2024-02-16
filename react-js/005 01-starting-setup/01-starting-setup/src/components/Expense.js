@@ -15,7 +15,6 @@ export function Expense(props) {
     const filteredExpenses = props.expensesList.filter(expense => {
 
         return expense.expenseDate.getFullYear().toString() === filteredYear;
-
     });
 
     return (
@@ -23,8 +22,10 @@ export function Expense(props) {
 
             <ExpenceFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
 
-            {
-                filteredExpenses.map((expense) => (
+            {/* 1 method using directly props list  */}
+
+            {/* {
+                props.expensesList.map((expense) => (
                     <ExpenseItem
                         key={expense.id}  //this is more advantage for performance , 06 folder = 004 understaning keys
                         expenseTitel={expense.expenseTitel}
@@ -32,7 +33,44 @@ export function Expense(props) {
                         expenseDate={expense.expenseDate}
                     />)
                 )
-            }
+            } */}
+
+            {/* 2 method using filteredList  */}
+
+            {/* {filteredExpenses.map((expense) => (
+                <ExpenseItem
+                    key={expense.id}  //this is more advantage for performance , 06 folder = 004 understaning keys
+                    expenseTitel={expense.expenseTitel}
+                    expenseAmount={expense.expenseAmount}
+                    expenseDate={expense.expenseDate}
+                />)
+            )} */}
+
+            {/* 3 method using conditional content ternery operator */}
+
+            {/* {filteredExpenses.length === 0 ? (<p className="no_expenses_msg">No Expenses Found.</p>) : filteredExpenses.map((expense) => (
+                <ExpenseItem
+                    key={expense.id}  //this is more advantage for performance , 06 folder = 004 understaning keys
+                    expenseTitel={expense.expenseTitel}
+                    expenseAmount={expense.expenseAmount}
+                    expenseDate={expense.expenseDate}
+                />)
+            )} */}
+
+            {/* 4 method for shorted ternery operator also  TRICKY ONE*/}
+
+            {filteredExpenses.length === 0 && <p className="no_expenses_msg">No Expenses Found.</p>}
+
+            {filteredExpenses.length > 0 &&
+
+                filteredExpenses.map((expense) => (
+                    <ExpenseItem
+                        key={expense.id}  //this is more advantage for performance , 06 folder = 004 understaning keys
+                        expenseTitel={expense.expenseTitel}
+                        expenseAmount={expense.expenseAmount}
+                        expenseDate={expense.expenseDate}
+                    />)
+                )}
 
         </Card>
     );
