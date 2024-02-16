@@ -3,6 +3,7 @@ import "./Expense.css"
 import Card from "./Card";
 import ExpenceFilter from "./ExpencesFilter/ExpenceFilter";
 import { useState } from "react";
+import ExpensesList from "./ExpensesList";
 
 
 
@@ -15,23 +16,24 @@ export function Expense(props) {
         setFilteredYear(selectedYear);
     };
 
+    console.log(props);
     const filteredExpenses = props.expensesList.filter(expense => {
 
         return expense.expenseDate.getFullYear().toString() === filteredYear;
     });
 
-    let expensesContent = <p className="no_expenses_msg">No Expenses Found.</p>;
+    // let expensesContent = <p className="no_expenses_msg">No Expenses Found.</p>;
 
-    if (filteredExpenses.length > 0) {
-        expensesContent = filteredExpenses.map((expense) => (
-            <ExpenseItem
-                key={expense.id}  //this is more advantage for performance , 06 folder = 004 understaning keys
-                expenseTitel={expense.expenseTitel}
-                expenseAmount={expense.expenseAmount}
-                expenseDate={expense.expenseDate}
-            />)
-        )
-    }
+    // if (filteredExpenses.length > 0) {
+    //     expensesContent = filteredExpenses.map((expense) => (
+    //         <ExpenseItem
+    //             key={expense.id}  //this is more advantage for performance , 06 folder = 004 understaning keys
+    //             expenseTitel={expense.expenseTitel}
+    //             expenseAmount={expense.expenseAmount}
+    //             expenseDate={expense.expenseDate}
+    //         />)
+    //     )
+    // }
  
 
     return (
@@ -94,7 +96,14 @@ export function Expense(props) {
             {/* 5 method more optimious conditional content  */}
 
 
-            {expensesContent}
+            {/* {expensesContent} */}
+
+
+            {/* I will split ExpensesList for a component  */}
+
+
+            <ExpensesList items={filteredExpenses}/>
+        
 
 
         </Card>
