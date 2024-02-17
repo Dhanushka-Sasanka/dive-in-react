@@ -6,10 +6,11 @@ import { useState } from "react";
 const DUMMY_EXPENCES = [
   { id: 1 , expenseDate: new Date(2021, 2, 1), expenseTitel: "Food Expense", expenseAmount: 25021.21 },
   { id: 2 ,expenseDate: new Date(2020, 2, 2), expenseTitel: "Car Expense", expenseAmount: 32000.23 },
-  { id: 3 ,expenseDate: new Date(2022, 2, 3), expenseTitel: "Travel Expense", expenseAmount: 12001.25 },
-  { id: 4 ,expenseDate: new Date(2023, 2, 4), expenseTitel: "Medicine Expense", expenseAmount: 54210.52 },
-  { id: 5 ,expenseDate: new Date(2024, 2, 5), expenseTitel: "Clothes Expense", expenseAmount: 45000.26 },
-  { id: 6 ,expenseDate: new Date(2024, 2, 5), expenseTitel: "Other Expense", expenseAmount: 58500.26 },
+  { id: 3 ,expenseDate: new Date(2022, 3, 3), expenseTitel: "Travel Expense", expenseAmount: 12001.25 },
+  { id: 4 ,expenseDate: new Date(2023, 3, 4), expenseTitel: "Medicine Expense", expenseAmount: 54210.52 },
+  { id: 5 ,expenseDate: new Date(2024, 5, 5), expenseTitel: "Clothes Expense", expenseAmount: 45000.26 },
+  { id: 6 ,expenseDate: new Date(2024, 6, 5), expenseTitel: "Other Expense", expenseAmount: 58500.26 },
+  { id: 7 ,expenseDate: new Date(2024, 8, 5), expenseTitel: "Other Expense", expenseAmount: 20000.26 },
 ];
 
 function App() {

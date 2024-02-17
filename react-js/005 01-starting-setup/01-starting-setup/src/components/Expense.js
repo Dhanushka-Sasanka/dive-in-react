@@ -4,6 +4,7 @@ import Card from "./Card";
 import ExpenceFilter from "./ExpencesFilter/ExpenceFilter";
 import { useState } from "react";
 import ExpensesList from "./ExpensesList";
+import ExpencesChart from "./ExpenceChart";
 
 
 
@@ -34,7 +35,7 @@ export function Expense(props) {
     //         />)
     //     )
     // }
- 
+
 
     return (
         <Card className="expenses">
@@ -99,11 +100,14 @@ export function Expense(props) {
             {/* {expensesContent} */}
 
 
+            <ExpencesChart expenses={filteredExpenses} />
+
             {/* I will split ExpensesList for a component  */}
 
 
-            <ExpensesList items={filteredExpenses}/>
-        
+
+            <ExpensesList items={filteredExpenses} />
+
 
 
         </Card>
